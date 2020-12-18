@@ -124,7 +124,7 @@ void CUARTPortLinux::OpenPort() throw (CWtpException)
 	struct termios options;
 	stringstream portNumber;
 	portNumber << theApp.iCommPort;
-	UARTDeviceName ="/dev/tty.usbserial-" ;
+	UARTDeviceName ="/dev/cu.usbserial-" ;
 	UARTDeviceName.append(portNumber.str());
 	cout << endl << UARTDeviceName << endl;
 	uartLinuxFileDesc = open(UARTDeviceName.c_str(),O_RDWR|O_NOCTTY);
